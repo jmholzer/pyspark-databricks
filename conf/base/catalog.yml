@@ -20,5 +20,5 @@ example_data:
 
 intermediate_save:
   type: spark.SparkDataSet
-  filepath: data/02_intermediate/intermediate_save.parquet
+  filepath: /dbfs/root/projects/pyspark-databricks/data/02_intermediate/intermediate_save.parquet
   versioned: True
