@@ -20,4 +20,4 @@ example_data:
 
 intermediate_save:
   type: spark.SparkDataSet
-  filepath: data/02_intermediate/X_train.parquet
+  filepath: data/02_intermediate/intermediate_save.parquet
