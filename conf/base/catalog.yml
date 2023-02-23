@@ -12,7 +12,7 @@
 
 example_data:
   type: spark.SparkDataSet
-  filepath: data/01_raw/example.csv
+  filepath: /dbfs/data/01_raw/example.csv
   file_format: csv
   load_args:
     header: True
@@ -20,5 +20,5 @@ example_data:
 
 intermediate_save:
   type: spark.SparkDataSet
-  filepath: data/02_intermediate/intermediate_save.parquet
-  versioned: True
+  filepath: /dbfs/data/02_intermediate/intermediate_save.parquet
+  versioned: False
