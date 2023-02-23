@@ -21,4 +21,4 @@ example_data:
 intermediate_save:
   type: spark.SparkDataSet
   filepath: /dbfs/data/02_intermediate/intermediate_save.parquet
-  versioned: False
+  versioned: True
