@@ -3,6 +3,9 @@ from setuptools import find_packages, setup
 entry_point = (
     "pyspark-databricks = pyspark_databricks.__main__:main"
 )
+databricks_entry_point = (
+    "pyspark-databricks-dbx = databricks.databricks_execute:main"
+)
 
 
 # get the dependencies and installs
@@ -20,7 +23,7 @@ setup(
     name="pyspark_databricks",
     version="0.1",
     packages=find_packages(exclude=["tests"]),
-    entry_points={"console_scripts": [entry_point]},
+    entry_points={"console_scripts": [entry_point, databricks_entry_point]},
     install_requires=requires,
     extras_require={
         "docs": [
