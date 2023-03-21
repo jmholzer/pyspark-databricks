@@ -10,9 +10,11 @@
 # https://kedro.readthedocs.io/en/stable/data/data_catalog.html
 #
 
+# /dbfs/root/projects/pyspark-databricks/
+
 example_data:
   type: spark.SparkDataSet
-  filepath: /dbfs/root/projects/pyspark-databricks/data/01_raw/example.csv
+  filepath: data/01_raw/example.csv
   file_format: csv
   load_args:
     header: True
@@ -20,5 +22,5 @@ example_data:
 
 intermediate_save:
   type: spark.SparkDataSet
-  filepath: /dbfs/root/projects/pyspark-databricks/data/02_intermediate/intermediate_save.parquet
+  filepath: data/02_intermediate/intermediate_save.parquet
   versioned: True
