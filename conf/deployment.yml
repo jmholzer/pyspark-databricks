@@ -1,0 +1,27 @@
+# Custom section is used to store configurations that might be repetative.
+# Please read YAML documentation for details on how to use substitutions and anchors.
+
+build:
+  no_build: true
+
+custom:
+  basic-cluster-props: &basic-cluster-props
+    spark_version: "11.3.x-scala2.12"
+
+  basic-static-cluster: &basic-static-cluster
+    new_cluster:
+      <<: *basic-cluster-props
+      num_workers: 0
+      node_type_id: "Standard_DS3_v2"
+
+
+environments:
+  default:
+    workflows:
+      - name: "kedro-test"
+        tasks:
+          - task_key: "main"
+            <<: *basic-static-cluster
+            python_wheel_task:
+              package_name: "pyspark_databricks"
+              entry_point: "pyspark-databricks-dbx"
