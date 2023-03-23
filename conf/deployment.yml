@@ -25,3 +25,12 @@ environments:
             python_wheel_task:
               package_name: "pyspark_databricks"
               entry_point: "pyspark-databricks-dbx"
+      - name: "kedro-test-no-package"
+        job_clusters:
+          - job_cluster_key: "default"
+            <<: *basic-static-cluster
+        tasks:
+          - task_key: "no_package_main"
+            job_cluster_key: "default"
+            spark_python_task:
+              python_file: "file://databricks_execute.py"
